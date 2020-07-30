@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<nav class="navbar navbar-inverse bg-dark font-weight-bold">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text-light text-centre" href="https://github.com/arpitkarnatak">College Prediction 
+    </div>
+    <ul class="nav navbar-nav font color white">
+      <li class="active"><a href="#"></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3></h3>
+  <p></p>
+</div>
+
+</body>
+</html>
+    
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h3>GRE Score (out of 340)</h3><input id="second" name="GRE Score" required="required">
+            <br><br>
+            
+            <h3>TOEFL Score (out of 120)</h3><input id="second" name="TOEFL Score" required="required">
+            <br><br>
+            <h3>University Ranking (1 to 5)</h3><input id="second" name="University Rating" required="required"><br><br>
+            <h3>SOP (out of 5)</h3><input id="second" name="SOP" required="required"><br><br>
+            <h3>LOR (out of 5)</h3><input id="second" name="LOR " required="required"><br><br>
+            
+            <h3>CGPA</h3><input id="second" name="CGPA" required="required"><br><br>
+            <h3>Research</h3><select name="Research" id="resea" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate Odds</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{prediction_text}}</h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: cornsilk;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-family: Helvetica;
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(255, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            height: 25px;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        
+        
+    </style>
+</body>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>
